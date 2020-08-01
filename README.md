@@ -1,5 +1,5 @@
 # only personal
-   *~ A web application that caters to all your personal needs*
+ _~ A web application that caters to all your personal needs_
    
   
  
@@ -8,6 +8,6 @@
  <br>
  <br>
  
- sample user
- email : aishwaryab.2903@gmail.com
- password : onlypersonal
+ sample user <br>
+ email : aishwaryab.2903@gmail.com <br>
+ password : onlypersonal <br>
