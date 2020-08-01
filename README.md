@@ -1,6 +1,6 @@
 # ONLY PERSONAL
+      ~ _A web application that caters to all your personal needs._
 
-A web application that caters to all your personal needs. 
 
 
 
