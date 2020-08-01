@@ -1,5 +1,5 @@
 # only personal
- *~ A web application that caters to all your personal needs*
+   *A web application that caters to all your personal needs*
    
   
  
