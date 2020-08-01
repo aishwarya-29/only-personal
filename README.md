@@ -1,8 +1,11 @@
 # only personal
-   _~ A web application that caters to all your personal needs<i>_
+   *~ A web application that caters to all your personal needs*
    
   
  
+ <br>
+ <br>
+ <br>
  <br>
  
  sample user
