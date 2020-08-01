@@ -1,0 +1,216 @@
+@media screen and (min-width: 781px) and (max-width: 840px) {
+    body {
+        font-size: 13px;
+    }
+}
+* {
+    position: relative;
+}
+body {
+    padding: 0% 0%;
+}
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Just Another Hand', cursive;
+}
+
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#mainNavbar .nav-link {
+    color:black;
+    float: right;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #967BB6;
+}
+
+#mainNavbar .navbar-brand {
+    color:#967BB6;
+    font-size: 1.5rem;
+}
+
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+.navbar.scrolled {
+    background: #f5d9d5;
+    transition: background 500ms;
+}
+
+@media (max-width: 1200px) {
+    #headingGroup h1 {
+        font-weight: 100;
+        font-size: 3rem;
+    }
+
+    .blurb h2 {
+        font-size: 2rem;
+    }
+}
+
+.nav-item {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    font-family: Roboto;
+    background: -webkit-linear-gradient(#cfa1be 90%, #26232e 90%);
+    /* Chrome 10+, Saf5.1+ */
+    background: -moz-linear-gradient(90deg, #26232e 10%, #cfa1be 90%);
+    /* FF3.6+ */
+    background: -ms-linear-gradient(90deg, #26232e 10%, #cfa1be 90%);
+    /* IE10 */
+    background: -o-linear-gradient(90deg, #26232e 10%,#cfa1be 90%);
+    /* Opera 11.10+ */
+    background: linear-gradient(90deg, #ECDCF2 10%, #cfa1be 90%);
+    /* W3C */
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+.sidebar {
+    background: rgba(161, 144, 198, 0.75)
+}
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+ .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+} 
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+body {
+    transition: margin-left .5s;
+    /* If you want a transition effect */
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+} 
+
+
+
+.hvr-float {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+}
+#particle {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 1
+}
+
+#jumbo {
+    background: #a190c6;
+    color: rgba(255, 255, 255);
+    position: relative;
+    padding: 50px;
+    overflow: auto;
+}
+
+.inner {
+    color: rgb(250, 250, 250);
+    opacity: 1;
+    float: right;
+    text-align: right;
+
+}
+
+.jumbotron p {
+    color: #2A204C;
+    font-family: 'Hind Vadodara', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container2 {
+    margin-top: auto;
+}
+
+.pop {
+    display: none;
+}
+ 
+.custom-toggler.navbar-toggler {
+    border-color: black;
+}

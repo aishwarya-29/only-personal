@@ -1,0 +1,90 @@
+<%- include ("../partials/header") %>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/journal/user.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300&family=Questrial&display=swap"
+        rel="stylesheet">
+</head>
+
+<div class="container">
+    <div class="jumbotron" id="jumbo">
+        <div class="inner">
+            <h1 style="color:#f5d9d5;font-family: 'Just Another Hand', cursive;font-size: 5rem;" data-aos="zoom-out">
+                <%= username %>'s Journal </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="journalEntry">
+    <div class = "entry">
+        <div class="header">
+            <div id = "left">
+                <label title="Upload an image" id="upload" for="file"><i class="fas fa-upload"></i></label>
+                <span title="Delete" id="delete"><i class="far fa-trash-alt"></i></span>
+            </div>
+        </div>
+        <div class="content">
+            <p id="filename"></p>
+            <form action="/journal/<%=username%>/new" method="POST" enctype="multipart/form-data">
+                <div class="custom-file mb-3">
+                    <input style="display: none" type="file" name="file" id="file" class="custom-file-input">
+                    <input style="display:none" type="text" name="name" value="Aishu">
+                    <input type="text" name="title" id="new2" placeholder="Enter Title">
+                    <textarea id="new" name="entry" placeholder="Type out your new entry.."></textarea>
+                    <button type="submit" id="btn1" class="btn btn-outline-dark btn-sm">Submit</button>
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="card-container">
+    <% var i = 1; %>
+    <% journals.forEach(function(journal){ %>
+    <div class="card">
+        <div class="card-count-container">
+            <h2><%= journal.title %></h2>
+            <div class="card-count"> <%= i %> </div>
+        </div>
+
+        <div class="card-content">
+            <div id="image">
+            <% if(journal.imageID !== "") {%>
+            <img src="/image/<%=journal.imageID%>">
+            <% } %>
+            </div>
+            <% journal.data.trim() %>
+            <br>
+            <div id="data">
+            <%= journal.data.trim().substr(0,200) %>...
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <%= journal.dateOfEntry.getDate(); %>
+            <%= journal.dateOfEntry.toLocaleString('default', { month: 'short' }); %>
+            <%= journal.dateOfEntry.getFullYear(); %>
+            <a href="/journal/<%=journal._id%>"> <button id="explore"><span>Read More</span></button> </a>
+        </div>
+    </div>
+    <% i=i+1; }); %>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    });
+</script>
+<script type="text/javascript" src="../scripts/journal/user.js"></script>
+<%- include ("../partials/footer") %>

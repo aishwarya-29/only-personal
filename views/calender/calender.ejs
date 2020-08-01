@@ -1,0 +1,44 @@
+<%- include ("../partials/header") %>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/calender/calender.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sacramento&family=Hind+Vadodara&family=Anton&family=Open+Sans+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<div class="container">
+    <div class="jumbotron" id="jumbo">
+        <div class="inner">
+            <h1 style="color:#f5d9d5;font-family: 'Just Another Hand', cursive;font-size: 5rem;" data-aos="zoom-out">
+                <%= username %>'s Calender </h1>
+            <p style="color:#FEFEDF;font-family: 'Sacramento', cursive;font-size: 2rem;"> because you tend to forget stuff...</p>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="select">
+    <label>Select Month : </label>
+    <% if(value) {%> 
+        <input type = "month" id = "month" name = "month" value = <%= value %> >
+    <% } else { %>
+    <input type = "month" id = "month" name = "month">
+    <% } %>
+    <button id="done" class="btn btn-dark btn-sm">Done </button>
+    <hr>
+</div>
+
+<%- include ("../partials/calender2") %>
+
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    });
+</script>
+<script type="text/javascript" src="../scripts/calender/calender.js"></script>
+<%- include ("../partials/footer") %>

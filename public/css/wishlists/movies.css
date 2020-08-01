@@ -1,0 +1,117 @@
+
+#list {
+    padding: 5%;
+    padding-bottom: 1%;
+}
+
+#list span {
+    float: right;
+    font-family: 'Anton', sans-serif;
+    font-size: 4rem;
+    color: #6D5E90;
+}
+
+/* ------------------------------THIS IS TO DO LIST CSS--------------------------- */
+
+#lists {
+    display: flex;
+    justify-content: space-evenly;
+}
+#container {
+    width: 40%;
+    margin: 5%;
+}
+#container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#container h1 {
+    background: #6D5E90;
+    color: white;
+    margin: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: 'Just Another Hand',
+    cursive;
+}
+#container h1 span {
+    cursor: pointer;
+}
+#container .fa-plus {
+    float: right;
+}
+
+#container li {
+    background: #F8EBFF;
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+    font-family: 'Quicksand',
+    sans-serif;
+}
+
+#container li:nth-child(2n) {
+    background: #FCF7FF;
+}
+
+#container li span {
+    background: #e74c3c;
+    height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    color: white;
+    width: 0;
+    display: inline-block;
+    transition: 0.2s linear;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#listul li span {
+    background-color: #1B89BD;
+}
+
+#container li:hover span {
+    width: 40px;
+    opacity: 1.0;
+}
+
+#container input {
+    font-size: 18px;
+    color: #6D5E90;
+    background-color: white;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    box-sizing: border-box;
+    border: 3px solid rgba(0, 0, 0, 0);
+}
+
+#container input:focus {
+    background: #fff;
+    border: 3px solid #6D5E90;
+    outline: none;
+}
+
+#container #container {
+    width: 360px;
+    margin: 100px auto;
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+
+#listul2 {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* ------------------------------THIS IS TO DO LIST CSS--------------------------- */
+
+#jumbo {
+    background-color: transparent;
+}

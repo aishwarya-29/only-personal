@@ -1,0 +1,152 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/calender/calender2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+</head>
+<% var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] %>
+<% var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %>
+<% function pad(d) { return (d < 10) ? '0' + d.toString() : d.toString(); } %>
+  <div class="container" id = "container">
+      <div class="calendar">
+          <div class="front">
+              <div class="current-date">
+                  <h1 id = "current-day"><%= dayNames[date.getDay()] %></h1>
+                  <h1> <span>1</span> <%= monthNames[date.getMonth()] %> <%= date.getFullYear() %></h1>
+              </div>
+              <div class="current-month">
+                  <ul class="week-days">
+                      <li>MON</li>
+                      <li>TUE</li>
+                      <li>WED</li>
+                      <li>THU</li>
+                      <li>FRI</li>
+                      <li>SAT</li>
+                      <li>SUN</li>
+                  </ul>
+                <% var trackdate = 0 %>
+                  <div class="weeks">
+                      <div class="first">
+                        <% function daysInMonth (month, year) { %>
+                        <%      return new Date(year, month, 0).getDate(); %>
+                        <% } %>
+                        <% var days = daysInMonth(date.getMonth(),date.getFullYear()); %>
+                          <% for (var i = date.getDay()-1; i>0; i--) { %>
+                            <span class="last-month"><%= days-i+1 %> </span>
+                          <% } %>
+                          <% for(var i = date.getDate(); i<=(7-date.getDay()+1); i++) { %>
+                            <% if(dates.includes(i)) { %>
+                              <span class = "event"><%= pad(i) %></span>
+                            <% } else { %>
+                            <span><%= pad(i) %></span>
+                            <% } %>
+                            <% trackdate = i %>
+                          <% } %>
+                      </div>
+
+                      <div class="second">
+                          <% var j = trackdate+1 %>
+                          <% for(var i = j; i < (j+7); i++) { %>
+                                <% if(dates.includes(i)) { %>
+                                <span class="event"><%= pad(i) %></span>
+                                <% } else { %>
+                                <span><%=pad(i)%></span>
+                                <% } %>
+                                <% trackdate = i %>
+                          <% } %>
+                      </div>
+
+                      <div class="third">
+                        <% var j = trackdate+1 %>
+                        <% for(var i = j; i < (j+7); i++) { %>
+                            <% if(dates.includes(i)) { %>
+                            <span class="event"><%= pad(i) %></span>
+                            <% } else { %>
+                            <span><%= pad(i) %></span>
+                            <% } %>
+                            <% trackdate = i %>
+                        <% } %>
+                      </div>
+
+                      <div class="fourth">
+                        <% var j = trackdate %>
+                        <% for(var i = j+1; i <= (j+7); i++) { %>
+                            <% if(dates.includes(i)) { %>
+                            <span class="event"><%= pad(i) %></span>
+                            <% } else { %>
+                            <span><%= pad(i) %></span>
+                            <% } %>
+                            <% trackdate = i %>
+                        <% } %>
+                      </div>
+                      
+                      <% if(trackdate+1 != daysInMonth(date.getMonth()+1,date.getFullYear())) { %>
+                      <div class="fifth">
+                        <% var i = 0; %>
+                        <% while(trackdate != daysInMonth(date.getMonth()+1,date.getFullYear())) { %>
+                            <% if(dates.includes(trackdate+1)) { %>
+                            <span class="event"><%= pad(trackdate+1) %></span>
+                            <% } else { %>
+                            <span><%= pad(trackdate+1) %></span>
+                            <% } %>
+                            <% trackdate +=1; i+=1; %>
+                        <% } var j = 1;%>
+                        <% while(i!=7) { %>
+                        <span class="last-month"><%= pad(j) %> </span>
+                        <% j+=1; i+=1; %>
+                       <%  } %>
+                      </div>
+                      <% } %>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      <div class="container" id="addEvent" >
+        <div class="container" id = "details">
+          <div id = "selected-date" style = "float: left;">
+          </div>
+          <div id = "selected-month" style = "float: right;">
+            <h5 id = "select-month"><%= monthNames[date.getMonth()] %> </h5>
+            <h5 id="select-year"><%= date.getFullYear() %> </h5>
+          </div>
+        </div>
+        <input type = "text" placeholder= "Add Event" class="form-control"> 
+        <div class="btn-group">
+          <button id="save" class="btn btn-success">SAVE!</button>
+          <span class="btn-separator"></span>
+          <button id = "cancel" class="btn btn-dark">Cancel</button>
+        </div>
+        <hr>
+        <ul id = "event-details">
+
+        </ul>
+      </div>
+  </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+<script>
+  var string  = "<%= dates %>";
+  var x = string.split(",").map(Number);
+  var xx = JSON.parse('<%-JSON.stringify(events)%>');
+  $('.weeks span:not(.last-month)').click(function(){
+    $('#event-details').html("");
+  var number = $(this).text().replace(/\s/g, '');
+  if(number[0] == 0)
+    number = number[1];
+  $('#xx').text(parseInt(number, 10));
+  if(x.includes(parseInt(number, 10))){
+    for(var i = 0; i< xx.length; i++) {
+        var xxx = new Date(xx[i].date);
+        if(xxx.getDate() == parseInt(number, 10)) {
+            $('#event-details').append("<li>" + xx[i].content + "</li>");
+        }
+    }
+  } else {
+    $('#event-details').html("");
+  }
+  
+  });
+</script>
+<script type="text/javascript" src="../scripts/calender/calender2.js"></script>

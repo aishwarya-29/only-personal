@@ -1,0 +1,76 @@
+<%- include ("../partials/header") %>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/wishlists/movies.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+         href="https://fonts.googleapis.com/css2?family=Sacramento&family=Hind+Vadodara&family=Anton&family=Open+Sans+Condensed:wght@300&display=swap"
+         rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sacramento&family=Hind+Vadodara&family=Anton&family=Open+Sans+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<div class="container">
+    <div class="jumbotron" id="jumbo">
+        <div class="inner">
+            <h1 style="color:#6D5E90;font-family: 'Anton',sans-serif;font-size: 5rem;"
+                data-aos="zoom-out">
+                MOVIES CHECKLIST </h1>
+        </div>
+    </div>
+</div>
+
+<div id="lists">
+    <hr style="color: black;">
+<div id="container">
+    <h1>To-Do List <span id="toggle-form"><i class="fa fa-plus"></i></span></h1>
+    <% if (isLoggedIn) { %>
+        <input type="text" placeholder="Add New Todo">
+    <% } %>
+    
+    <% if(movies) { %>
+    <ul id="listul">
+        <% movies["todo"].forEach(function(movie){ %>
+            <li>
+                <% if (isLoggedIn) { %>
+                <span><i class=" fas fa-check"></i></span>
+                <% } %>
+                <%= movie %>
+            </li>
+        <% }); %>       
+    </ul>
+    <% }%>
+
+</div>
+
+<div id="container">
+    <h1>Movies Watched</h1>
+    <% if(doneMovies) { %>
+    <ul id="listul2">
+        <% doneMovies["todo"].forEach(function(movie){ %>
+        <li>
+            <% if (isLoggedIn) { %>
+            <span><i class="fa fa-trash"></i></span>
+            <% } %>
+            <%= movie %>
+        </li>
+        <% }); %>
+    </ul>
+    <% } %>
+</div>
+</div>
+
+<span id="identifier" style = "display: none;">Movies</span>
+<span id="img" style="display: none;"></span>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    });
+</script>
+<script type"text/javascript" src="../scripts/wishlist.js"></script>
+<%- include ("../partials/footer") %>

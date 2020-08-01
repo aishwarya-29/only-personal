@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/index/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/index/auth.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Bad+Script&family=Catamaran:wght@300&family=Manrope:wght@600&family=Just+Another+Hand&family=Raleway:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title> Only Personal </title>
+</head>
+
+<body>
+    <nav id="mainNavbar" class="navbar navbar-light navbar-expand-md py-0 fixed-top">
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="/">Only Personal</a>
+        </div>
+    </nav>
+    <div id="particle"></div>
+    <br>
+    <br>
+    <br>
+
+    <div class="container" id="signup">
+        <div class="left">
+            <img src="https://i.imgur.com/eK61ZQq.jpg" alt="Marketplace">
+        </div>
+        <div class="right" id="div1">
+            <h1>SIGN UP</h1>
+            <div id="form">
+                <form action="/admin/new" method = "POST">
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" id="email" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password2" id="password2" placeholder="Re-enter Password">
+                    </div>
+                    <button class="btn btn-dark" type="submit" class="submit-btn">Create Account</button>
+                </form>
+            </div>
+            <span class="text-right">Already have an account? <button class="btn btn-sm btn-primary" id="clicklogin">Sign In.</button></span>
+        </div>
+        <div class="right" style="display: none;" id="div2">
+            <h1>LOGIN</h1>
+            <div id="form">
+                <form action="/admin" method = "POST">
+                    <div class="form-group">
+                        <input type="text" name="email" id="email" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                    <button class="btn btn-dark" type="submit" class="submit-btn">Sign in</button>
+                </form>
+            </div>
+            <span class="text-right">Don't have an account? <button class="btn btn-sm btn-primary" id="clicksignup">Sign Up.</a></span>
+        </div>
+    </div>
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="../scripts/auth.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+        });
+    </script>
+<%- include ("./partials/footer") %>

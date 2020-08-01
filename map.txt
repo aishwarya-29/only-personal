@@ -1,0 +1,22 @@
+-home
+	about us
+	about each
+	small poem
+
+-gallery
+	add images
+
+-bucket-list
+	
+	things to-do
+	places to visit
+	movies to watch
+
+-personal space
+	
+	about
+	writings
+	journal entries
+
+- countdowns
+- date night

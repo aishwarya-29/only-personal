@@ -1,0 +1,259 @@
+* {
+    margin: 0%;
+}
+
+/* -------------------------------------NEW JOURNAL------------------------------------ */
+#journalEntry {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 5%;
+    color: black;
+}
+.entry {
+    height: 500px;
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    height: 500px;
+}
+form {
+    height: 100%;
+}
+
+form #new2 {
+    font-family: 'Questrial', sans-serif;
+}
+
+form #new {
+    font-family: 'Montserrat', sans-serif;
+}
+textarea {
+    color: black;
+    padding: 5%;
+    height: 450px;
+    width: 100%;
+}
+#left {
+    float: right;
+}
+
+.header {
+    height: 7px;
+}
+.footer {
+    float: right;
+}
+
+.content input {
+    width: 100%;
+    padding: 1% 5%;
+}
+
+#upload, #delete {
+    z-index: 1;
+    cursor: pointer;
+    margin: 2px;
+    display: inline-block;
+}
+ 
+
+#upload:hover, #delete:hover {
+    transform: scale(1.1);
+}
+
+
+/* -------------------------------------DISPLAY JOURNAL------------------------------------ */
+* {
+    box-sizing: border-box;
+}
+
+body>h1,
+body>p {
+    text-align: center;
+}
+
+body>h1 {
+    margin: 40px;
+    color: #ffffff;
+}
+
+body>p {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card-container .card {
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    width: 40%;
+}
+
+.card-container .card .card-count-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    padding: 20px 0px;
+}
+
+.card-container .card .card-count {
+    font-weight: bold;
+    font-size: 100px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: auto;
+    margin-right: -50px;
+    padding-right: 25px;
+    overflow: hidden;
+    color: #ffffff;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-in-out;
+}
+
+.card-container .card .card-content {
+    padding: 20px;
+    padding-top: 0px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.card-container .card .card-content #data {
+    white-space: pre-wrap;
+}
+
+.card-container .card .card-content>h2 {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.card-container .card .card-footer {
+    padding: 20px;
+    color: #ffffff;
+}
+
+.card-container .card:nth-child(1n) .card-count,
+.card-container .card:nth-child(1n) .card-footer {
+    background-image: linear-gradient(90deg, #A190C6, #DB93C6);
+}
+.card-container .card:nth-child(1n) .card-footer #explore {
+    background-image: linear-gradient(90deg, #FF9AB1, #FFAE90);
+}
+
+.card-container .card:nth-child(4n) .card-count,
+.card-container .card:nth-child(4n) .card-footer {
+    background-image: linear-gradient(90deg, #FF9AB1, #FFAE90);
+}
+.card-container .card:nth-child(4n) .card-footer #explore {
+    background-image: linear-gradient(90deg, #A190C6, #DB93C6);
+}
+.card-container .card:nth-child(4n+1) .card-count,
+.card-container .card:nth-child(4n+1) .card-footer {
+    background-image: linear-gradient(90deg, #FF9AB1, #FFAE90);
+}
+.card-container .card:nth-child(4n+1) .card-footer #explore {
+    background-image: linear-gradient(90deg, #A190C6, #DB93C6);
+}
+
+.card-container .card-count-container h2 {
+    padding-left: 5%;
+}
+
+.card-container .card:hover .card-count {
+    width: 160px;
+    height: 160px;
+}
+
+@media (max-width: 767px) {
+    .card-container {
+        flex-wrap: wrap;
+    }
+}
+
+.card-container {
+    margin: 0%;
+}
+
+.card-count-container {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain 100%;
+}
+
+.card {
+   display: flex;
+   flex-direction: column;
+}
+
+.card-footer {
+    margin-top: auto;
+}
+
+img {
+    max-width:30%;
+    max-height:30%;
+}
+
+#image {
+    text-align: center;
+}
+
+.card-count-container h2 {
+    max-width: 75%;
+    font-family: 'Questrial', sans-serif;
+}
+
+#explore {
+    float: right;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 30%;
+}
+
+#explore span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#explore span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#explore:hover span {
+    padding-right: 25px;
+}
+
+#explore:hover span:after {
+    opacity: 1;
+    right: 0;
+}

@@ -1,0 +1,32 @@
+#add button:hover {
+    background-color: #F8EBFF;
+}
+#add button {
+    background-color: white;
+    color: #6D5E90;
+    border: 2px solid #6D5E90;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
+#dropdown {
+    float: right;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
+#dropdown > button {
+    background-color: #494453;
+    outline: none;
+    border: none;
+    color: white;
+}
+a:hover {
+    text-decoration: none !important;
+}
+
+#fromto {
+    float: right;
+    font-family: 'Montserrat',
+    sans-serif;
+}

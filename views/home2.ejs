@@ -1,0 +1,150 @@
+<%- include ("./partials/header") %>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/index/home2.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sacramento&family=Hind+Vadodara&family=Anton&family=Open+Sans+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito&family=Raleway:wght@500&family=Oswald:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
+</head>
+
+
+<div class="container" id="letter">
+    <p id="letter-content">
+    </p>
+</div>
+<br>
+
+<div class = "container" id = "date">
+    <h1> <span>&#183; Features &#183;</span></h1>
+    <div class="artboard">
+        <a href="/gallery">
+        <div class="card">
+            <div class="card__side card__side--back">
+                <div class="card__cover">
+                    <h4 class="card__heading">
+                        <span class="card__heading-span">Gallery</span>
+                    </h4>
+                </div>
+                <div class="card__details">
+                    <ul>
+                        Take a walk down memory lane and explore all your favorite pictures. Have a new memory to add? Click here and save all your memories!
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card__side card__side--front">
+                <div class="card__theme">
+                    <div class="card__theme-box">
+                        <p class="card__subject">Only Personal</p>
+                        <p class="card__title">GALLERY</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </a>
+        <a href="/wishlist">
+        <div class="card">
+            <div class="card__side card__side--back">
+                <div class="card__cover">
+                    <h4 class="card__heading">
+                        <span class="card__heading-span">Wishlist</span>
+                    </h4>
+                </div>
+                <div class="card__details">
+                    <ul>
+                        Dream and reach for the stars! <br>
+                        Create exciting new bucketlists and check them off as you accomplish them. 
+                        Also add tasks, to-do lists and much much more! 
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card__side card__side--front">
+                <div class="card__theme">
+                    <div class="card__theme-box">
+                        <p class="card__subject">Only Personal</p>
+                        <p class="card__title">WISHLIST</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </a>
+        <a href="/journal">
+        <div class="card">
+            <div class="card__side card__side--back">
+                <div class="card__cover">
+                    <h4 class="card__heading">
+                        <span class="card__heading-span">Journal</span>
+                    </h4>
+                </div>
+                <div class="card__details">
+                    <ul>
+                        Your own personal diary protected with a password. <br>
+                        Who has time to maintain a diary, am I right? <br>
+                        Click here to add a new journal entry! 
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card__side card__side--front">
+                <div class="card__theme">
+                    <div class="card__theme-box">
+                        <p class="card__subject">Only Personal</p>
+                        <p class="card__title">JOURNAL</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </a>
+        <a href="/calender">
+        <div class="card">
+            <div class="card__side card__side--back">
+                <div class="card__cover">
+                    <h4 class="card__heading">
+                        <span class="card__heading-span">Calender</span>
+                    </h4>
+                </div>
+                <div class="card__details">
+                    <ul style="font-size: 15px;">
+                        Keep track of all your events. <br>
+                        Add links and reminders. Never miss out on anything!
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card__side card__side--front">
+                <div class="card__theme">
+                    <div class="card__theme-box">
+                        <p class="card__subject">Only Personal</p>
+                        <p class="card__title">CALENDER</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </a>
+    </div>
+</div>
+<h1 style="display: none;" id="username"><%=username%></h1>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="text/javascript" src="./scripts/home2.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    });
+</script>
+<%- include ("./partials/footer") %>

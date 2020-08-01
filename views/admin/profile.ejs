@@ -1,0 +1,103 @@
+<%- include ("../partials/header") %>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/admin/profile.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sacramento&family=Hind+Vadodara&family=Anton&family=Open+Sans+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<div class="container">
+    <div class="jumbotron" id="jumbo">
+        <div class="inner">
+            <h1 style="color:#f5d9d5;font-family: 'Just Another Hand', cursive;font-size: 5rem;" data-aos="zoom-out">
+                Hello <%= user.name %> </h1>
+        </div>
+    </div>
+</div>
+<form action="/logout" method="POST">
+    <button id="logout" class="btn btn-outline-secondary btn-sm" type="submit">Logout</button>
+</form>
+<br>
+<br>
+
+<div class="container">
+    <div class="row" id="about">
+        <div id="image" class="col-6-md">
+            <form action="/admin/<%=username%>/image" method="POST" id="frm" enctype="multipart/form-data">
+                <input style="display: none" type="file" name="file" id="file" class="custom-file-input">
+            </form>
+            <label for="file" id="edit" title="Upload an image"><i class="far fa-edit"></i></label>
+            <img src="/image/<%=user.imageURL%>" alt="Profile">
+        </div>
+        <div id="list" class="col-6-md">
+            <ul id="change-admin-pwd">Change admin password<i style="float:right" class="fas fa-caret-down fa-1.5x"
+                    aria-hidden="true"></i></ul>
+            <form id="adminpwd" style="margin: 4%; display: none;" action='/admin/<%=username%>/update' method='POST'>
+                <div class="form-group">
+                    <label for="change">Enter New Password</label>
+                    <input type="password" name="change" id="change" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="repwd">Re-enter New Password</label>
+                    <input type="password" name="repwd" id="repwd" class="form-control">
+                </div>
+                <input type="text" style="display:none" value="password" name="key">
+                <button type="submit" style="float:right;" class="btn btn-sm btn-success">Change</button>
+                <br>
+                <br>
+            </form>
+            <ul id="change-journal-pwd">Change journal password <i style="float:right" class="fas fa-caret-down fa-1.5x"
+                    aria-hidden="true"></i></ul>
+            <form id="journalpwd" style="margin: 4%; display: none;" action='/admin/<%=username%>/update' method='POST'>
+                <div class="form-group">
+                    <label for="change">Enter New Journal Password</label>
+                    <input type="password" name="change" id="change" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="repwd2">Re-enter New Journal Password</label>
+                    <input type="password" name="repwd2" id="repwd2" class="form-control">
+                </div>
+                <input type="text" style="display:none" value="journalLock" name="key">
+                <button type="submit" style="float:right;" class="btn btn-sm btn-success">Change</button>
+                <br>
+                <br>
+            </form>
+            <ul id="change-username">Change username <i style="float:right" class="fas fa-caret-down fa-1.5x"
+                    aria-hidden="true"></i></ul>
+            <form id="username" style="margin: 4%; display: none;" action='/admin/<%=username%>/update' method='POST'>
+                <div class="form-group">
+                    <label for="change">Enter New Username</label>
+                    <input type="text" name="change" id="change" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="un2">Re-enter New Username</label>
+                    <input type="text" name="un2" id="un2" class="form-control">
+                </div>
+                <input type="text" style="display:none" value="name" name="key">
+                <button type="submit" style="float:right;" class="btn btn-sm btn-success">Change</button>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <img src="https://i.imgur.com/lqvw6fs.gif">
+        </div>
+    </div>
+</div>
+
+<h1 style="display: none;" id="name"><%=username%></h1>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    });
+</script>
+<script type="text/javascript" src="../scripts/admin/profile.js"></script>
+<%- include ("../partials/footer") %>

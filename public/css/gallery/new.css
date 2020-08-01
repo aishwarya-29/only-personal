@@ -1,0 +1,33 @@
+#jumbo {
+    height: 200px;
+}
+
+#form {
+    width: 50%;
+    margin: auto;
+}
+
+.custom-file-container {
+    max-width: 400px;
+    margin: 0 auto;
+    z-index: (99999);
+}
+
+#preview {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    min-height: 200px;
+    display: none;
+    margin-top: 5%;
+}
+
+#preview img {
+    max-width: 20%;
+    height: auto;
+    object-fit: contain;
+    margin: 5%;
+}

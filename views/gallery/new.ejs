@@ -1,0 +1,51 @@
+<%- include ("../partials/header") %>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/gallery/new.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sacramento&family=Hind+Vadodara&family=Anton&family=Open+Sans+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://unpkg.com/file-upload-with-preview@4.0.2/dist/file-upload-with-preview.min.css">
+</head>
+
+<div class="container">
+    <div class="jumbotron" id="jumbo">
+        <div class="inner">
+            <h1 style="color:#f5d9d5;font-family: 'Just Another Hand', cursive;font-size: 5rem;" data-aos="zoom-out">
+                Add a new Memory! </h1>
+        </div>
+    </div>
+</div>
+
+<div id = "add">
+    <form id="form" method="POST" action="/gallery/new" enctype = "multipart/form-data">
+        <div class="form-group">
+            <input class="form-control" type="text" name="memory[title]" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" type="text" name="memory[desc]" placeholder="Description"></textarea>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="date" name="memory[date]">
+        </div>
+        <input style="display: none" type="file" name="files" id="files" multiple>
+        <label for="files" style="float: right;"><span type="button" class="btn btn-dark btn-sm">Add
+                Pictures</span></label>
+        <button style="float: left;" class="btn btn-success btn-sm" type="submit">Submit</button>
+    </form>
+    <br>
+    <div id = "preview">
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    });
+</script>
+<script type="text/javascript" src="../scripts/gallery/gallerynew.js"></script>
+<%- include ("../partials/footer") %>

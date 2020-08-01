@@ -1,0 +1,182 @@
+.calender {
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.calendar, #addEvent {
+    background: #F8EBFF;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+    height: fit-content;
+    perspective: 1000;
+    transition: .9s;
+    transform-style: preserve-3d;
+    width: 50%;
+    float: left;
+}
+
+/* Front - Calendar */
+.front {
+    transform: rotateY(0deg);
+}
+
+.current-date {
+    border-bottom: 1px solid rgba(73, 114, 133, .6);
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
+.current-date h1 {
+    color: black;
+    font-size: 1.4em;
+    font-weight: 300;
+}
+
+.week-days {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 30px 40px;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
+.weeks {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
+.weeks div {
+    display: flex;
+    font-size: 1.2em;
+    font-weight: 300;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.last-month {
+    opacity: .3;
+}
+
+.weeks span {
+    padding: 10px;
+}
+
+.weeks span.active {
+    background: #494453;
+    border-radius: 50%;
+    color: white;
+}
+
+.weeks span:not(.last-month):hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.event {
+    position: relative;
+}
+
+.event:after {
+    content: '•';
+    color: #494453;
+    font-size: 1.4em;
+    position: absolute;
+    right: -4px;
+    top: -4px;
+}
+
+/* Flip animation */
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+}
+
+
+#addEvent {
+    width: 40%;
+    align-self: center;
+    height: 550px;
+    padding: 0%;
+    float: right;
+    display: none;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
+#addEvent input {
+   margin: 10%;
+   width: 80%;
+   margin-top: 15%;
+}
+
+.btn-group {
+    width:100%;
+}
+
+#details {
+    padding: 5%;
+    width: 100%;
+    height: 50px;
+    color: black;
+}
+
+#details #selected-date {
+    font-size: 3rem;
+    padding: 0%;
+}
+
+#details #selected-month {
+    padding: 3%;
+}
+
+#event-details {
+    color: black;
+    white-space: pre-wrap;
+}
+
+ul li {
+    margin-right: 5%;
+}
+
+#save {
+    background-color: #007058;
+    border: none;
+    border-radius: 0%;
+}
+
+#cancel {
+    background-color: #AFA8BA;
+    border: none;
+    border-radius: 0%;
+}
