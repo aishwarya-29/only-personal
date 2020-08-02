@@ -73,9 +73,6 @@ const upload = multer({
     storage
 });
 
-middleWare.isLoggedIn = false;
-middleWare.email = "";
-middleWare.username = "";
 //ROUTES
 var aboutRoutes         =       require("./routes/about"),
     wishlistRoutes      =       require("./routes/wishlist"),
@@ -100,8 +97,11 @@ function checkLoggedIn(req, res, next) {
 }
 
 //ROUTES
-app.get("/", checkLoggedIn, function (req,res){
-   res.render("auth.ejs");
+app.get("/", function (req,res){
+    middleWare.isLoggedIn = false;
+    middleWare.email = "";
+    middleWare.username = "";
+    res.render("auth.ejs");
 });
 
 app.get("/home", function (req,res) {
