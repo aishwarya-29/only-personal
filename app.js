@@ -73,6 +73,9 @@ const upload = multer({
     storage
 });
 
+middleWare.isLoggedIn = false;
+middleWare.email = "";
+middleWare.username = "";
 //ROUTES
 var aboutRoutes         =       require("./routes/about"),
     wishlistRoutes      =       require("./routes/wishlist"),
